@@ -24,10 +24,11 @@ class CreateLandAgentsTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')
                 ->references('id')
-                ->on('lands')
+                ->on('users')
                 ->onDelete('cascade');
 
             $table->string('land_agent_name')->nullable();
+            $table->timestamps();
 
         });
     }
