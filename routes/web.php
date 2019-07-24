@@ -25,6 +25,7 @@ Route::get('/', function () {
 ////    print_r($des);exit;
 ////    return $role['id'];
 //});
+Route::get('member/register', 'MembersController@registerForm');
 
 Auth::routes();
 

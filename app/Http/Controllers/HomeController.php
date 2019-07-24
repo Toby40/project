@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Land;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -38,6 +39,7 @@ class HomeController extends Controller
 
     public function memberDashboard()
     {
-        return view('Member.dashboard');
+        $lands = Land::query()->get()->all();
+        return view('Member.dashboard',compact('lands'));
     }
 }

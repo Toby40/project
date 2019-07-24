@@ -72,7 +72,7 @@
                             </div>
 
                             {{--<div class="pull-right">--}}
-                                <a href="">Are you an existing member of harambee sacco?</a>
+                                <a href="{{ url('member/register') }}">Are you an existing member of harambee sacco?</a>
                             {{--</div> --}}
 
                         </div>

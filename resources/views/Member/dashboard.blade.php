@@ -14,7 +14,24 @@
                             </div>
                         @endif
 
-                        You are logged in!
+                        View Listed lands
+                            @foreach($lands as $land)
+
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title"> Location : {{ $land->land_location }}</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">Land Size : {{ $land->land_size }}</h6>
+                                    <p class="card-text">Title No :{{ $land->title_no }}</p>
+                                    <a href="#" class="card-link">Price :Ksh {{ $land->land_price }}</a>
+
+                                </div>
+                                <div class="card-footer">
+                                    <button class="btn-primary">Reserve Land</button>
+                                </div>
+
+                            </div>
+                                @endforeach
+
                     </div>
                 </div>
             </div>
