@@ -26,7 +26,7 @@
 
                                 </div>
                                 <div class="card-footer">
-                                    <button class="btn-primary">Reserve Land</button>
+                                    <a href="{{ url('reserve/land/' .$land->id) }}"><button class="btn-primary">Reserve Land</button></a>
                                 </div>
 
                             </div>

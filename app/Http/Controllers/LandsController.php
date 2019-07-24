@@ -19,4 +19,14 @@ class LandsController extends Controller
 
         return redirect('/staff/dashboard')->with('success', 'successfully verified land');
     }
+
+    public function viewLand($id)
+    {
+    	return view('Member.reserve_land');
+    }
+
+    public function reserveLand($id)
+    {
+    	
+    }
 }
