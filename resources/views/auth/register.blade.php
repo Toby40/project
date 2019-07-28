@@ -66,7 +66,15 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Register') }}
                                 </button>
+
+                                {{--<a href="" class="pull-right">Are you an existing member of harambee sacco?</a>--}}
+
                             </div>
+
+                            {{--<div class="pull-right">--}}
+                                <a href="{{ url('member/register') }}">Are you an existing member of harambee sacco?</a>
+                            {{--</div> --}}
+
                         </div>
                     </form>
                 </div>

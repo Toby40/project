@@ -25,6 +25,7 @@ Route::get('/', function () {
 ////    print_r($des);exit;
 ////    return $role['id'];
 //});
+Route::get('member/register', 'MembersController@registerForm');
 
 Auth::routes();
 
@@ -32,3 +33,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/agent/dashboard', 'HomeController@agentDashboard');
 Route::get('/staff/dashboard', 'HomeController@staffDashboard');
 Route::get('/member/dashboard', 'HomeController@memberDashboard');
+Route::any('/verify/land/{id}', 'LandsController@verifyLand');
+Route::get('reserve/{id}', 'LandsController@viewLand');
+Route::get('reserve/land/{id}', 'LandsController@reserveLand');
+Route::get('lands/data', 'LandsController@landsData');
