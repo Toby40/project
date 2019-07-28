@@ -22,11 +22,11 @@
                                     <h5 class="card-title"> Location : {{ $land->land_location }}</h5>
                                     <h6 class="card-subtitle mb-2 text-muted">Land Size : {{ $land->land_size }}</h6>
                                     <p class="card-text">Title No :{{ $land->title_no }}</p>
-                                    <a href="#" class="card-link">Price :Ksh {{ $land->land_price }}</a>
+                                    <a href="#" class="card-link">Price :Ksh {{ number_format($land->land_price) }}</a>
 
                                 </div>
                                 <div class="card-footer">
-                                    <a href="{{ url('reserve/land/' .$land->id) }}"><button class="btn-primary">Reserve Land</button></a>
+                                    <a href="{{ url('reserve/' .$land->id) }}"><button class="btn-primary">Reserve Land By Paying Ksh({{ number_format(0.10 * $land->land_price) }})</button></a>
                                 </div>
 
                             </div>

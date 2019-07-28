@@ -17,11 +17,13 @@ class LandsController extends Controller
             'land_status' => 1
         ]);
 
-        return redirect('/staff/dashboard')->with('success', 'successfully verified land');
+        // return response()->json(['message' => 'successfully verified land']);
+        return redirect('staff/dashboard');
     }
 
     public function viewLand($id)
     {
+
     	return view('Member.reserve_land');
     }
 

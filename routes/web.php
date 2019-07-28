@@ -33,6 +33,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/agent/dashboard', 'HomeController@agentDashboard');
 Route::get('/staff/dashboard', 'HomeController@staffDashboard');
 Route::get('/member/dashboard', 'HomeController@memberDashboard');
-Route::post('/verify/land/{id}', 'LandsController@verifyLand');
+Route::any('/verify/land/{id}', 'LandsController@verifyLand');
 Route::get('reserve/{id}', 'LandsController@viewLand');
 Route::get('reserve/land/{id}', 'LandsController@reserveLand');
