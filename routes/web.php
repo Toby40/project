@@ -36,3 +36,4 @@ Route::get('/member/dashboard', 'HomeController@memberDashboard');
 Route::any('/verify/land/{id}', 'LandsController@verifyLand');
 Route::get('reserve/{id}', 'LandsController@viewLand');
 Route::get('reserve/land/{id}', 'LandsController@reserveLand');
+Route::get('lands/data', 'LandsController@landsData');
