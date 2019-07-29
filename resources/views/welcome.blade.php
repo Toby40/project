@@ -45,7 +45,7 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 62px;
             }
 
             .links > a {
@@ -80,6 +80,7 @@
             @endif
 
             <div class="content">
+
                 <div class="title m-b-md">
                     SACCO LAND RESERVATION SYSTEM
                 </div>
@@ -87,6 +88,8 @@
                 <div class="links">
 
                 </div>
+
+
             </div>
         </div>
     </body>
