@@ -31,6 +31,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/agent/dashboard', 'HomeController@agentDashboard');
+Route::get('/agent/update/land/{id}', 'HomeController@getLand');
+Route::post('/agent/land/update/{id}', 'HomeController@updateLand');
 Route::get('/staff/dashboard', 'HomeController@staffDashboard');
 Route::get('/member/dashboard', 'HomeController@memberDashboard');
 Route::any('/verify/land/{id}', 'LandsController@verifyLand');
