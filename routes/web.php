@@ -26,6 +26,7 @@ Route::get('/', function () {
 ////    return $role['id'];
 //});
 Route::get('member/register', 'MembersController@registerForm');
+Route::get('agent/register', 'LandAgentController@registerForm');
 
 Auth::routes();
 

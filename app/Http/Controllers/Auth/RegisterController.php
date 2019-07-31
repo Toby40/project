@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -28,7 +30,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+//    protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
@@ -63,10 +65,52 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
+//        print_r($data);exit;
+        //register agent
+        if(isset($data['agent'])){
+            return User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'role_id' => 4,
+                'password' => Hash::make($data['password']),
+            ]);
+
+        }else{
+            return User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'role_id' => 2,
+                'password' => Hash::make($data['password']),
+            ]);
+        }
+
+//        return User::create([
+//            'name' => $data['name'],
+//            'email' => $data['email'],
+//            'password' => Hash::make($data['password']),
+//        ]);
+    }
+
+//    protected function authenticated(Request $request, $user)
+//    {
+//        if($user->role_id == 1){
+//            return redirect()->to('/home');
+//        }else if($user->role_id == 4){
+//            return redirect()->to('/agent/dashboard');
+//        }else if($user->role_id == 3){
+//            return redirect()->to('/staff/dashboard');
+//        }else{
+//            return redirect()->to('/member/dashboard');
+//        }
+//    }
+
+    protected function redirectTo()
+    {
+        if(Auth::user()->role_id == 2){
+            return '/member/dashboard';
+        }elseif (Auth::user()->role_id == 4){
+            return "/agent/dashboard";
+        }
+        return "/home";
     }
 }
